@@ -2,7 +2,7 @@ import re
 from collections import Counter
 import random
 
-with open('debate.txt') as f:
+with open('corpus/debate.txt') as f:
     debate = f.read()
 
 # clean the text and split over clinton and trump

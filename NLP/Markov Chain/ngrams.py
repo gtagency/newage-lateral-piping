@@ -1,4 +1,5 @@
 import re
+import random
 from collections import Counter
 with  open("debate.txt") as f:
     debate = f.read()
@@ -21,15 +22,27 @@ with  open("debate.txt") as f:
     hc = Counter(holt_text.split())
     length=2
     corpus = trump_text.split()
-    thing = Counter(tuple(corpus[i:i+length]) for i in range (len(corpus) - length+1))
-    newc = Counter(tuple(corpus[i:i+length]) for i in range (length-1))
-    probabilities = {}
-    for prefix in prefixes.lines():
-        probabilities[prefix] = []
-        for newc in phrases.keys():
-            if newc[0] == prefix:
-                probabilities[prefix].extend(list(phrases[-1]*newc[phrase]))
-                
-    print(thing)
+    grams = Counter(tuple(corpus[i:i+length]) for i in range(len(corpus) - length + 1))
+prefixes = Counter(tuple(corpus[i:i+length-1]) for i in range(len(corpus) - length - 1 + 1))
+
+
+samples = dict()
+for prefix in prefixes:
+    samples[prefix] = []
+    for gram in grams:
+        if prefix == gram[:-1]:
+            samples[prefix].extend([gram[-1]] * grams[gram])
+
+
+for i in range(25):
+    first_words = random.choice(list(prefixes.elements()))
+    sentence = list()
+    sentence.extend(first_words)
+
+    while random.random() < .92:  
+        sentence.append(random.choice(samples[tuple(sentence[-(length-1):])]))
+
+   
+
     
     

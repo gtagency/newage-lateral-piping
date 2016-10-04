@@ -5,7 +5,7 @@ from glob import glob
 #user-controlled parameters
 ngram_lengths = (5,11,15)
 output_length = 1000
-sample_path = 'corpus/war_and_peace.txt'
+sample_path = '../corpus/war_and_peace.txt'
 
 #initialize other variables
 ngram_lengths = tuple(sorted(ngram_lengths, reverse=True))
@@ -16,7 +16,7 @@ corpus = ''
 for fname in glob(sample_path):
     print('source', fname)
     with open(fname, 'r') as txtfile:
-        gen = (c for line in txtfile 
+        gen = (c for line in txtfile
                  for c in line.replace('\n',' ')
                  if c not in '.,?!@#$%^&*()\'":;<>/\\|[}{]'
               )
@@ -67,7 +67,7 @@ for _ in range(output_length):
 
 print('length of ngram decreased', n_defaults, 'times')
 for n in ngram_lengths:
-    print('n=%d used %d times' % (n, counts[n])) 
+    print('n=%d used %d times' % (n, counts[n]))
 
 #with open('markov_output.txt', 'w') as output_file:
 #    output_file.write(text)

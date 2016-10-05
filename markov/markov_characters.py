@@ -1,11 +1,9 @@
 import random
-import os
-from glob import glob
 
 #user-controlled parameters
-ngram_lengths = (5,11,15)
+ngram_lengths = (7,11,15)
 output_length = 1000
-sample_path = '../corpus/war_and_peace.txt'
+fname = '../corpus/war_and_peace.txt'
 
 #initialize other variables
 ngram_lengths = tuple(sorted(ngram_lengths, reverse=True))
@@ -13,16 +11,14 @@ ngram_dict = {}
 corpus = ''
 
 #read from sample
-for fname in glob(sample_path):
-    print('source', fname)
-    with open(fname, 'r') as txtfile:
-        gen = (c for line in txtfile
-                 for c in line.replace('\n',' ')
-                 if c not in '.,?!@#$%^&*()\'":;<>/\\|[}{]'
-              )
-        for char in gen:
-            corpus += char
-        corpus = corpus.lower()
+print('source', fname)
+with open(fname, 'r') as txtfile:
+    generator = (c for c in txtfile.read().replace('\n', ' ')
+                   if not c in '.,?!@#$%^&*()\'":;<>/\\|[}{]'
+                )
+    for char in generator:
+        corpus += char
+    corpus = corpus.lower()
 
 #crawl over body of text for n-grams
 for n in ngram_lengths:

@@ -3,12 +3,15 @@ import random
 import sys
 
 if len(sys.argv) < 2:
-    print('please pass me a file')
+    print('please pass me a file! using War and Peace as the default')
+    filepath = '../corpus/war_and_peace.txt'
+else:
+    filepath = sys.argv[1].replace('\\','/')
 
-with open(sys.argv[1], 'r') as f:
+with open(filepath, 'r') as f:
     text = f.read()
 
-print('cleaning text...')
+print('cleaning text %s ...' % filepath.split('/')[-1])
 # clean the text
 text = text.replace('\n', ' ').lower()
 
@@ -20,7 +23,7 @@ for char in "'(),?!$%^&*:;\"":
 
 print('creating prefix-to-word probability table...')
 corpus = text.split()
-length = 4  # n-gram length, change to 2 for bigrams
+length = 3  # n-gram length, change to 2 for bigrams
 
 # samples[prefix_tuple] = Counter<next_word_string>
 samples = dict()

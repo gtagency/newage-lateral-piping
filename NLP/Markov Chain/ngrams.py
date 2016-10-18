@@ -21,9 +21,9 @@ with  open("debate.txt") as f:
     cc = Counter(clinton_text.split())
     hc = Counter(holt_text.split())
     length=2
-    corpus = trump_text.split()
+    corpus = clinton_text.split()
     grams = Counter(tuple(corpus[i:i+length]) for i in range(len(corpus) - length + 1))
-prefixes = Counter(tuple(corpus[i:i+length-1]) for i in range(len(corpus) - length - 1 + 1))
+    prefixes = Counter(tuple(corpus[i:i+length-1]) for i in range(len(corpus) - length - 1 + 1))
 
 
 samples = dict()
@@ -42,7 +42,7 @@ for i in range(25):
     while random.random() < .92:  
         sentence.append(random.choice(samples[tuple(sentence[-(length-1):])]))
 
-   
+    print( ' '.join(sentence), end='\n\n')
 
     
     

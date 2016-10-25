@@ -28,8 +28,11 @@ for sentence in sents:
 print('starting training')
 model = Word2Vec(corpus, size=100, iter=5)
 
+print('\nresults:\n')
+print(model.most_similar('man', topn=3), '\n')
+print(model.most_similar('tree', topn=3), '\n')
 print(model.most_similar_cosmul(
-    positive=['beginning', 'evening'], 
+    positive=['beginning', 'morning'], 
     negative=['end'], 
     topn=3
 ))

@@ -6,7 +6,7 @@ if len(sys.argv) < 2:
     sys.exit()
 
 filepath = sys.argv[1]
-print('reading from', filepath)
+print('reading from', filepath, '...')
 sents = []
 delete_chars = '@#$%^&*()=}]{[<>\t1234567890'
 separator_chars = '.;:?!-_+,\"\n'
@@ -25,15 +25,10 @@ for sentence in sents:
     corpus.append(sentence.split())
 #print(corpus)
 
-print('starting training')
+print('starting training ...')
 model = Word2Vec(corpus, size=100, iter=5)
 
-print('\nresults:\n')
-print(model.most_similar('man', topn=3), '\n')
-print(model.most_similar('tree', topn=3), '\n')
-print(model.most_similar_cosmul(
-    positive=['beginning', 'morning'], 
-    negative=['end'], 
-    topn=3
-))
+print('saving ...')
+model.save('mymodel.dat')
 
+print('done.')

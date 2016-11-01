@@ -1,7 +1,7 @@
 import re
 import random
 from collections import Counter
-with  open("hp.txt.rtf") as f:
+with  open("../corpus/hp_sorcerers_stone.txt") as f:
     hp = f.read()
     hp.replace('\n',"").replace("?"," " ).replace("."," " ).replace(",", " ").replace("!", " ").replace("'", "")
     hp.replace("$", " ").replace("-"," ")

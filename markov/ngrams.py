@@ -1,7 +1,7 @@
 import re
 import random
 from collections import Counter
-with  open("debate.txt") as f:
+with  open("../corpus/debate.txt") as f:
     debate = f.read()
     debate = debate.replace('\n',"").replace("?"," " ).replace("."," " ).replace(",", " ").replace("!", " ").replace("'", "")
     debate = debate.replace("CLINTON:","\nC").replace("TRUMP:","\nT").replace("HOLT:", "\nH").replace("$", " ").replace("-"," ")

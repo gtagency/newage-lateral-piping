@@ -18,7 +18,7 @@ text = text.replace('\n', ' ').lower()
 # remove punctuation
 for char in ".-/\\":
     text = text.replace(char, ' ')
-for char in "'(),?!$%^&*:;\"":
+for char in "'(),?!$%^&*:;\"[]":
     text = text.replace(char, '')
 
 print('creating prefix-to-word probability table...')

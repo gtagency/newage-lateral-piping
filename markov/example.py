@@ -24,25 +24,26 @@ for char in "',?!-$:;":
 
 corpus = tt.split()
 length = 3  # n-gram length, change to 2 for bigrams
-grams = Counter(tuple(corpus[i:i+length]) for i in range(len(corpus) - length + 1))
-prefixes = Counter(tuple(corpus[i:i+length-1]) for i in range(len(corpus) - length - 1 + 1))
 
 # create prefix -> word probability 'table'
+# samples[prefix_tuple] = Counter<next_word_string>
 samples = dict()
-for prefix in prefixes:
-    samples[prefix] = []
-    for gram in grams:
-        if prefix == gram[:-1]:
-            samples[prefix].extend([gram[-1]] * grams[gram])
+for i in range(len(corpus) - length):
+    pref = tuple(corpus[i:i+length-1])
+    nxt = (corpus[i+length-1],)
+    if not pref in samples.keys():
+        samples[pref] = Counter()
+    samples[pref].update(nxt)
 
 # on run, create 25 random generated grams, the seed words are chosen at random from the
 # seed text, in line with their probability
 for i in range(25):
-    first_words = random.choice(list(prefixes.elements()))
+    first_words = random.choice(tuple(samples.keys()))
     sentence = list()
     sentence.extend(first_words)
 
     while random.random() < .92:  # lazy end condition, since we aren't tracking PERIOD characters
-        sentence.append(random.choice(samples[tuple(sentence[-(length-1):])]))
+        pref = tuple(sentence[-(length-1):])
+        sentence.append(random.choice(tuple(samples[pref].elements())))
 
     print( ' '.join(sentence), end='\n\n')

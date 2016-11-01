@@ -87,3 +87,9 @@ ENV/
 
 # Rope project settings
 .ropeproject
+
+# Mac OS folder settins
+.DS_Store
+*/.DS_Store
+
+# 

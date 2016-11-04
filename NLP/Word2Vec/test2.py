@@ -29,19 +29,25 @@ with  io.open("501analogies.txt", encoding='utf-8') as f:
                 
                 txt2 = re.findall("[a-zA-Z]+\.",txt)
                 if len(txt2) > 0:
-                    qa[num] = qa[num] + "answer: " + txt2[0]
+                    qa[num] = qa[num]  + txt2[0]
             else:
                 #otherwise key = num, value = text
                 
                 qa [num] = txt
-    #test    
+    # storing data in an array of tuples  
     wow = []   
+    # go through all keysin dictionary
     for i in qa.keys():
+        # find for each value the answer I appended to the end
         hits = re.findall("[a-zA-Z]+\.",qa[i])
         if len(hits) > 0:
+            
             length = len(hits)-1
             x = hits[length]
+            # append the (question without the answer, answer) to the array
             wow.append((qa[i].replace(x," "),x ))
+            #checking to make sure it works
     for i in wow:
         print(i)
+        #check length
     print(len(wow))

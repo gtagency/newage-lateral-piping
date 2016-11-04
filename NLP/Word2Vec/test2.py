@@ -29,10 +29,19 @@ with  io.open("501analogies.txt", encoding='utf-8') as f:
                 
                 txt2 = re.findall("[a-zA-Z]+\.",txt)
                 if len(txt2) > 0:
-                    qa[num] = qa[num] + txt2[0]
+                    qa[num] = qa[num] + "answer: " + txt2[0]
             else:
                 #otherwise key = num, value = text
                 
                 qa [num] = txt
-    #test       
-    print(qa["54"])
+    #test    
+    wow = []   
+    for i in qa.keys():
+        hits = re.findall("[a-zA-Z]+\.",qa[i])
+        if len(hits) > 0:
+            length = len(hits)-1
+            x = hits[length]
+            wow.append((qa[i].replace(x," "),x ))
+    for i in wow:
+        print(i)
+    print(len(wow))

@@ -13,5 +13,13 @@ with  io.open("501analogies.txt", encoding='utf-8') as f:
     text = re.sub(p, "", text)
     qa = {}
     s = "3. hello 4. hi 6. nah"
-    text = re.split('\d+\.',text)
-    print(text)
+    text = re.split('(\d+\.)',text)
+    for i in range(len(s)):
+        if re.match("\d+", s[i]):
+            num = re.findall("\d+", s[i])
+            txt = s[i+1]
+            
+            print(num)
+            print(txt)
+            
+   # print(text)

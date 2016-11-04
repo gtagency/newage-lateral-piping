@@ -26,9 +26,13 @@ with  io.open("501analogies.txt", encoding='utf-8') as f:
             txt = b[i+1]
             # if the question is in the dictionary, append the answer to the question
             if(num in qa.keys()):
-                qa[num] = qa[num] + txt
+                
+                txt2 = re.findall("[a-zA-Z]+\.",txt)
+                if len(txt2) > 0:
+                    qa[num] = qa[num] + txt2[0]
             else:
                 #otherwise key = num, value = text
+                
                 qa [num] = txt
     #test       
     print(qa["54"])

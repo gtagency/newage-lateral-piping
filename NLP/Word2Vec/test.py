@@ -7,6 +7,6 @@ from nltk.corpus import brown
 #b.save('/tmp/mymodel')
 
 new_model = gensim.models.Word2Vec.load('/tmp/mymodel')
-print(new_model.most_similar(positive=['person','baby','child'],negative = ['dog','tree'], topn=5))
+print(new_model.similar_by_vector([9,8], topn=10, restrict_vocab=None))
 #COCA corpus
 #save a mmodels

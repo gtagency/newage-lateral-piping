@@ -7,10 +7,10 @@ def test_most_similar(model, pos_words, neg_words, n_results):
 
 
 
-existing_model = Word2Vec.load('mymodel.dat')
+model = Word2Vec.load('mymodel.dat')
 
 print('\nresults:')
-test_most_similar(['person','baby','child'], ['dog','tree'], 5)
-test_most_similar(['man'], [], 3)
-test_most_similar(['tree'], [], 3)
-test_most_similar(['beginning', 'morning'], ['end'], 3)
+test_most_similar(model, ['person','baby','child'], ['dog','tree'], 5)
+test_most_similar(model, ['man'], [], 3)
+test_most_similar(model, ['tree'], [], 3)
+test_most_similar(model, ['beginning', 'morning'], ['end'], 3)

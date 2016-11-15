@@ -3,4 +3,4 @@ from nltk import corpus
 
 print('training model...')
 b = Word2Vec(corpus.brown.sents())
-b.save('mymodel.dat')
+b.save('brown_model.dat')

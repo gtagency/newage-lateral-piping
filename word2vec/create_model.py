@@ -9,7 +9,11 @@ ignore = re.compile('\n|\"|\(|\)|,|')
 punct = re.compile('\?|!')
 
 file_dir = '../../../simplewiki'
-filenames = (itertools.chain.from_iterable(glob.glob(os.path.join(x[0], 'wiki_*')) for x in os.walk(file_dir)))
+filenames = ( #an iterable over file names
+    itertools.chain.from_iterable(
+        glob.glob(os.path.join(x[0], 'wiki_*')) for x in os.walk(file_dir)
+    )
+)
 
 
 def wiki_data():
@@ -37,5 +41,10 @@ class WikiIterator:
         self.gen = self.f()
         return gen
 
-b = gensim.models.Word2Vec(WikiIterator(wiki_data), workers=4, size=100, min_count=50,  sg=1, window=4)
-b.save('models/simpleModel min 50 size 100')
+_min_count = 50
+_size = 100
+
+b = gensim.models.Word2Vec(WikiIterator(wiki_data), 
+    workers=4, size=_size, min_count=_min_count,  sg=1, window=4
+)
+b.save('models/simplewiki_model_min%d_size%d' % (_min_count, _size))

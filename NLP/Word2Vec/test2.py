@@ -29,7 +29,8 @@ with  io.open("501analogies.txt", encoding='utf-8') as f:
                 
                 txt2 = re.findall("[a-zA-Z]+\.",txt)
                 if len(txt2) > 0:
-                    qa[num] = qa[num]  + txt2[0]
+                    qa[num] = qa[num]  + "HI" + txt2[0] + "HI"
+                    
             else:
                 #otherwise key = num, value = text
                 
@@ -39,22 +40,23 @@ with  io.open("501analogies.txt", encoding='utf-8') as f:
     # go through all keysin dictionary
     for i in qa.keys():
         # find for each value the answer I appended to the end
-        hits = re.findall("[a-zA-Z]+\.",qa[i])
+        hits = re.findall("HI[a-zA-Z]+\.HI",qa[i])
         if len(hits) > 0:
             
             length = len(hits)-1
             x = hits[length]
             # append the (question without the answer, answer) to the array
-            wow.append((qa[i].replace(x," "),x ))
+            wow.append((qa[i].replace(x,""),x.replace("HI","") ))
             #checking to make sure it works
     lol = []
+    #hohoho
     for i in wow:
         hi = i[0]
         nooo= hi.split(":")
         for j in nooo:
             if j == "":
                 nooo.remove(j)
-             
+            j.strip(" ")
         lol.append((nooo,i[1]))
     for i in lol:
         print(i)

@@ -22,7 +22,7 @@ def main(a, b, c, d):
 
 
 if __name__ == '__main__':
-    model = Word2Vec.load('../model/trained_four.dat')  # loading model
+    model = Word2Vec.load('../models/trained_four.dat')  # loading model
 
     result_text = open('../output_file/analogy_answers_trained_four.txt', 'w')
     actual_answers_text = open('../input_files/answers.txt', 'r')

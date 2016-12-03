@@ -1,0 +1,34 @@
+Question                                ActualAnswer        ModelAnswer              1/0
+
+queen : woman :: king : ____            man                 man                      1
+good : bad :: happy : ____              sad                 sad                      1
+mouth : eat :: feet : ____              walk                walk                     1
+fire : hot :: ice : ____                cold                tired                    0
+dirt : brown :: leaves : ____           green               green                    1
+flower : plant :: dog : ____            animal              animal                   1
+dark : light :: little : ____           big                 big                      1
+teacher : school :: doctor : ____       hospital            hospital                 1
+book : read :: television : ____        watch               sleep                    0
+awful : bad :: fantastic : ____         good                delicious                0
+thirsty : drink :: hungry : ____        eat                 eat                      1
+big : large :: little : ____            small               small                    1
+knife : metal :: pillow : ____          cloth               cloth                    1
+anger : feeling :: sister : ____        family              family                   1
+jazz : music :: painting : ____         art                 dog                      0
+pen : write :: ruler : ____             measure             measure                  1
+genius : smart :: idiot : ____          stupid              stupid                   1
+beach : sand :: forest : ____           trees               trees                    1
+lettuce : vegetable :: apples : ____    fruit               music                    0
+tub : bathroom :: stove : ____          kitchen             kitchen                  1
+nice : mean :: short : ____             tall                orange                   0
+mother : woman :: father : ____         man                 man                      1
+hammer : hit :: gun : ____              shoot               shoot                    1
+coffee : drink :: violin : ____         instrument          instrument               1
+shoes : feet :: helmet : ____           head                arms                     0
+bread : food :: red : ____              color               color                    1
+poor : money :: sad : ____              happiness           happiness                1
+brick : wall :: page : ____             book                car                      0
+day : week :: month : ____              year                year                     1
+broom : clean :: stove : ____           cook                cook                     1
+
+Accuracy: 73.33%

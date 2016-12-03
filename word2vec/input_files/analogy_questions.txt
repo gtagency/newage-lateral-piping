@@ -1,0 +1,240 @@
+1.
+______ : king :: woman : queen
+a.
+man
+b.
+royalty
+c.
+castle
+2.
+good : bad :: happy : ______
+a.
+sad
+b.
+smile
+c.
+great
+3.
+mouth : eat :: feet : ______
+a.
+talk
+b.
+walk
+c.
+see
+4.
+fire : hot :: ice : ______
+a.
+blue
+b.
+tired
+c.
+cold
+5.
+dirt : brown :: leaves : ______
+a.
+gray
+b.
+green
+c.
+purple
+6.
+flower : plant :: dog : ______
+a.
+house
+b.
+animal
+c.
+brother
+7.
+dark : light :: little : ______
+a.
+angry
+b.
+big
+c.
+rainy
+8.
+teacher : school :: doctor : ______
+a.
+hospital
+b.
+house
+c.
+restaurant
+9.
+book : read :: television : ______
+a.
+watch
+b.
+eat
+c.
+sleep
+10.
+awful : bad :: fantastic : ______
+a.
+delicious
+b.
+good
+c.
+sunny
+11.
+thirsty : drink :: hungry : ______
+a.
+write
+b.
+hear
+c.
+eat
+12.
+big : large :: little : ______
+a.
+tall
+b.
+quick
+c.
+small
+13.
+knife : metal :: pillow : ______
+a.
+cloth
+b.
+wood
+c.
+glass
+14.
+anger : feeling :: sister : ______
+a.
+man
+b.
+book
+c.
+family
+15.
+jazz : music :: painting : ______
+a.
+song
+b.
+art
+c.
+dog
+16.
+pen : write :: ruler : ______
+a.
+measure
+b.
+eat
+c.
+feel
+17.
+genius : smart :: idiot : ______
+a.
+mad
+b.
+stupid
+c.
+cold
+19.
+beach : sand :: forest : ______
+a.
+trees
+b.
+men
+c.
+students
+20.
+lettuce : vegetable :: apples : ______
+a.
+house
+b.
+music
+c.
+fruit
+21.
+tub : bathroom :: stove : ______
+a.
+mountain
+b.
+car
+c.
+kitchen
+22.
+nice : mean :: short : ______
+a.
+tall
+b.
+orange
+c.
+angry
+23.
+mother : woman :: father : ______
+a.
+shoe
+b.
+teacher
+c.
+man
+24.
+hammer : hit :: gun : ______
+a.
+shoot
+b.
+feel
+c.
+eat
+25.
+coffee : drink :: violin : ______
+a.
+food
+b.
+person
+c.
+instrument
+26.
+shoes : feet :: helmet : ______
+a.
+arms
+b.
+head
+c.
+toes
+27.
+bread : food :: red : ______
+a.
+color
+b.
+song
+c.
+television
+28.
+poor : money :: sad : ______
+a.
+age
+b.
+feelings
+c.
+happiness
+29.
+brick : wall :: page : ______
+a.
+book
+b.
+house
+c.
+car
+30.
+day : week :: month : ______
+a.
+year
+b.
+November
+c.
+hour
+31.
+broom : clean :: stove : ______
+a.
+write
+b.
+cook
+c.
+look
